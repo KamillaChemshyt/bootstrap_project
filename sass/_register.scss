@@ -1,0 +1,120 @@
+$rgb_blue: rgb(51, 51, 209);
+$white: #fff;
+
+
+@mixin example{
+    border: 1px solid black;
+    border-radius: 40px;
+}
+
+@mixin bl_24{
+    width: 40%;
+    margin: 5px;
+    padding-left: 50px;
+}
+
+@mixin bl_15{
+    float: right;
+    width: 40%;
+    padding-right: 50px;
+}
+
+@mixin buttons{
+    padding-left: 60px;
+    width: 93%;
+}
+
+@mixin a_15{
+    text-align: center;
+}
+
+
+
+.back{
+    background-color: $rgb_blue;
+}
+
+.img_reg{
+    height: 530px;
+    width: 400px;
+    margin: 15px 0px 15px 15px;
+    
+}
+
+.forma{
+    height: 530px;
+    width: 800px;
+    margin: 15px 15px 15px 0px;
+    background-color: $white;
+    border: 1px solid $white;
+    border-radius: 5px;
+}
+
+.title4{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding-top: 10px;
+}
+
+
+#exampleFormControlInput10,
+#exampleFormControlInput11,
+#exampleFormControlInput12,
+#exampleFormControlInput13,
+#exampleFormControlInput14{
+    @include example;
+}
+
+.bl_sec, 
+.bl_four{
+    @include bl_24;
+}
+
+.bl_fir, 
+.bl_fif{
+    @include bl_15;
+}
+
+.bl_fir{
+    margin: 5px 10px 0px 5px;
+}
+
+.bl_fif{
+    margin: -77px 10px 0px 5px;
+    padding-top: 0px;
+}
+
+
+.bl_third{
+    width: 93%;
+    margin: 5px;
+    padding-left: 50px;
+}
+
+
+.button_1{
+    padding-top: 10px;
+    @include buttons;
+}
+
+
+.button_2{
+    padding-top: 30px;
+    @include buttons;
+}
+
+.button_3{
+    padding-top: 10px;
+    @include buttons;
+}
+
+.a_first{
+    padding-top: 10px;;
+}
+
+.a_second,
+.a_first{
+    text-align: center;
+}
+

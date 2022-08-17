@@ -1,0 +1,150 @@
+$white: #fff;
+
+$blue: #0000FF;
+
+$rgb_grey: rgb(240, 240, 240);
+
+@mixin widheight{
+    height: 350px;
+    width: 300px;
+}
+
+@mixin title{
+    background-color: $rgb_grey;
+    color: $blue;
+    font-weight: bold;
+    font-size: 18px;
+    border: 1px solid $rgb_grey;
+    border-radius: 10px;
+    text-align: center;
+}
+
+@mixin name{
+    font-weight: bold;
+    font-size: 16px;
+    padding-top: 5px;
+}
+
+@mixin proc{
+    float: right;
+    margin: 5px 10px 0px 5px;
+    font-size: 14px;
+}
+
+@mixin title_2{
+    margin-top: 15px;
+}
+
+@mixin block{
+    width: 45%;
+    margin: 25px;
+}
+
+@mixin block_2{
+    float: right;
+    width: 45%;
+    margin: 25px 10px 0px 5px;
+}
+
+@mixin bt{
+    margin: 25px;
+}
+
+
+
+.block_first{
+    @include widheight;
+    margin-top: 20px;
+}
+
+.change{
+    text-align: center;
+}
+
+.block_second{
+    @include widheight;
+    margin-top: 80px;
+    border: 1px solid $white;
+    border-radius: 10px;
+    background-color: $white;
+}
+
+.title, 
+.title2,
+.title3{
+    @include title;
+}
+
+.name1, 
+.name2, 
+.name3,
+.name4,
+.name5{
+    @include name;
+}
+
+.proc_1, 
+.proc_2, 
+.proc_3, 
+.proc_4, 
+.proc_5{
+    @include proc;
+}
+
+.title2, 
+.title3{
+    @include title_2;
+}
+
+.form{
+    border: 1px solid $white;
+    border-radius: 10px;
+    background-color: $white;
+    height: 390px;
+    width: 550px;
+    margin-top: 60px;
+    margin-left: 60px;
+    padding: 5px;
+}
+
+.block3_1,
+.block4_1{
+    @include block;
+}
+
+.block4_1{
+    padding-top: 25px;
+}
+
+.block3_2,
+.block4_2{
+    @include block_2;
+}
+
+.bt,
+.bt2{
+    @include bt;
+}
+
+.block4{
+    width: 95%;
+    margin: 25px;
+    
+}
+
+
+.form2{
+    border: 1px solid $white;
+    border-radius: 10px;
+    background-color: $white;
+    height: 350px;
+    width: 550px;
+    margin-top: 35px;
+    margin-left: 60px;
+    padding: 5px;
+}
+
+.copyright1{
+    text-align: center;
+    padding-left: 170px;
+}

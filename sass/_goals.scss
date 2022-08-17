@@ -1,0 +1,366 @@
+$white: #fff;
+
+$rgb_blue: rgb(50, 111, 224);
+
+$blue: #0000FF;
+
+$green: #008000;
+
+$red: #FF0000;
+
+$yellow: #FFD700;
+
+$grey: #D3D3D3;
+
+$black: #000000;
+
+
+@mixin block{
+    margin-top:20px;
+    padding: 10px;
+    background-color: $white;
+    border: 1px solid $white;
+    border-radius: 10px;
+}
+
+@mixin p{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+@mixin p_1{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+@mixin image{
+    float: right;
+    margin: 15px 0px 0px 15px;
+
+}
+
+@mixin time{
+    font-style: italic;
+    font-size: 14px;
+}
+
+
+
+.menu {
+	position: fixed;
+	top: 20px;
+	left: 150px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 50px;
+	height: 50px;
+	background-color: $white;
+	border-radius: 50%;
+	transition: transform 250ms ease;
+	cursor: pointer;
+	z-index: 200;
+	
+	span {
+		position: relative;
+		display: block;
+		width: 50%;
+		height: 2px;
+		background-color: $blue;
+		float: left;
+		transform-origin: center center;
+		transition: transform 250ms ease;
+		z-index: 200;
+		
+		&:nth-of-type(1) {
+			transform: translateY(-5px);
+		}
+		
+		&:nth-of-type(3) {
+			transform: translateY(5px);
+		}
+	}
+}
+
+#menu {
+	display: none;
+	
+	&:checked ~ .menu {
+		background-color: transparent;
+		transform: rotate(360deg);
+		transition: transform 250ms ease;
+		
+		span {
+			background-color: $white;
+			transition: transform 250ms ease;
+			
+			&:nth-of-type(1) {
+				transform: translateY(1px) rotate(45deg);
+			}
+			
+			&:nth-of-type(2) {
+				display: none;
+			}
+			
+			&:nth-of-type(3) {
+				transform: translateY(-1px) rotate(-45deg);
+			}
+		}
+	}
+	
+	&:checked ~ .nav {
+		left: 0px;
+		transition: left 500ms ease;
+	}
+	
+	&:checked ~ main {
+		transform: translateX(250px);
+		transition: transform 500ms ease;
+	}
+}
+
+.nav {
+	position: fixed;
+	margin-top:10px;
+	left: -310px;
+	width: 200px;
+	height: 20px;
+	margin: 0;
+	padding: 0;
+	transition: left 500ms ease;
+	z-index: 0;
+	ul {
+		position: relative;
+		list-style-type: none;
+		margin: 20px 0;
+		padding: 0;
+		
+		li {
+			position: relative;
+			display: block;
+			border-bottom: 5px solid rgba($white,1);
+			
+			a {
+				position: relative;
+				display: block;
+				margin: 0;
+				padding: 10px 20px;
+				color: $white;
+				font-size: 14px;
+				font-weight: bold;
+				text-decoration: none;
+				text-transform: uppercase;
+				
+				&:before {
+					position: absolute;
+					content: '';
+					top: 0;
+					left: 0;
+					width: 0;
+					height: 100%;
+					transition: width 250ms ease;
+					z-index: -1;
+				}
+				
+				&:hover {
+					color: $black;
+					
+					&:before {
+						width: 100%;
+						height: 100%;
+						background-color: rgba($blue,1);
+						transition: width 250ms ease;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+.sidebar-container{
+    background-color: $rgb_blue;
+    position: fixed;
+    height: 100%;
+    width: 220px;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-top: 0px;
+}
+
+.content-container{
+    padding-top: 10px;
+    padding-left: 205px;
+}
+
+.navbar-brand{
+    color: $white;
+}
+
+.navbar-nav{
+    padding:0;
+    margin: 0;
+    position: relative;
+    list-style-type: none;
+}
+
+
+navbar-nav{
+    li{
+        position: relative;
+        display: inline-block;
+        width: 100%;
+        line-height: 20px;
+    }
+}
+
+    navbar-nav{
+        li{
+        a{
+            padding: 10px 15px 10px 30px;
+            display: block;
+            color: $white;
+        }
+    }
+    }
+
+    navbar-nav{
+        li{
+        .fa{
+            margin-right: 10px;
+        }
+    }
+}
+
+
+.search{
+    padding-left: 220px;
+}
+
+.form-inline{
+    padding-left: 50px;
+}
+
+.img_1{
+    padding-right: 40px;
+}
+
+h6{
+    padding-right: 50px;
+}
+
+.first_bl{
+    @include block;
+}
+
+.p1{
+    @include p;
+    color: $blue;
+}
+
+.p1_1{
+    @include p_1;
+}
+
+.bag{
+    @include image;
+}
+
+
+.second_bl{
+    @include block;
+}
+
+.p2{
+    @include p;
+    color: $green;
+}
+
+.p2_1{
+    @include p_1;
+}
+
+.schedule{
+    @include image;
+}
+
+
+.third_bl{
+    @include block;
+}
+
+.p3{
+    @include p;
+    color: $red;
+}
+
+.p3_1{
+    @include p_1;
+}
+
+.dollar{
+    @include image;
+}
+
+.fourth_bl{
+    @include block;
+}
+
+.p4{
+    @include p;
+    color: $yellow;
+}
+
+.p4_1{
+    @include p_1;
+}
+
+.chat{
+    @include image;
+}
+
+.fotter{
+    padding-left: 80px;
+}
+
+.copyright{
+    padding-left: 370px;
+}
+
+.button_top{
+    margin-left: auto;
+}
+
+.list{
+    width: 120%;
+    padding: 20px;
+    background-color: $white;
+    margin-left: 60px;
+    border: 1px solid $white;
+    border-radius: 10px;
+}
+
+.thead{
+    background-color: $grey;
+}
+
+.head{
+    color: $blue;
+    @include p_1;
+}
+
+.body_1,
+.body_2,
+.body_3{
+    @include p_1;
+}
+
+.time_1,
+.time_2,
+.time_3{
+    @include time;
+}
